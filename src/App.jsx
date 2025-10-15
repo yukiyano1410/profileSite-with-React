@@ -15,10 +15,10 @@ function App() {
       <p>学びの軌跡を残す自己紹介サイト</p>
 
       <NavBar setPage={setPage} />
-
+      {/* Reactにおいて&&は　条件 && 内容があるのであれば、条件がtrueなら右側をfalseならfalseを返す */}
       {page === "hobby" && <Hobby setModalImg={setModalImg} />}
-      {page === "study" && <Study />}
-      {page === "works" && <Works />}
+      {page === "study" && <Study setModalImg={setModalImg} />}
+      {page === "works" && <Works setModalImg={setModalImg} />}
 
       {modalImg && (
         <ImageModal img={modalImg} close={() => setModalImg(null)} />
